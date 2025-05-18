@@ -1,0 +1,128 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Master 2.0</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="particles"></div>
+    <div class="container">
+        <div class="game-card">
+            <div class="card-header">
+                <div class="title-wrapper">
+                    <h1><i class="fas fa-gamepad"></i> Guess Master</h1>
+                    <p class="subtitle">Can you guess the number?</p>
+                </div>
+                <div class="mode-switcher">
+                    <button class="mode-btn active" data-mode="normal">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <button class="mode-btn" data-mode="dark">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="difficulty-selector">
+                <button class="diff-btn active" data-diff="easy">
+                    <i class="fas fa-baby"></i> Easy
+                </button>
+                <button class="diff-btn" data-diff="medium">
+                    <i class="fas fa-user"></i> Medium
+                </button>
+                <button class="diff-btn" data-diff="hard">
+                    <i class="fas fa-dragon"></i> Hard
+                </button>
+            </div>
+
+            <div class="game-stats">
+                <div class="stat-item">
+                    <i class="fas fa-bullseye"></i>
+                    <span>Range: </span>
+                    <span id="range">1-100</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-hourglass-half"></i>
+                    <span>Attempts: </span>
+                    <span id="attempts">10</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-star"></i>
+                    <span>Score: </span>
+                    <span id="score">0</span>
+                </div>
+            </div>
+
+            <div class="input-wrapper">
+                <div class="number-input">
+                    <input type="number" id="guess-input" placeholder="Enter your guess">
+                    <div class="input-controls">
+                        <button class="control-btn" id="increment">
+                            <i class="fas fa-chevron-up"></i>
+                        </button>
+                        <button class="control-btn" id="decrement">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+                <button id="guess-btn" class="guess-btn">
+                    <span>Guess</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+
+            <div class="feedback-section">
+                <div class="hint-box">
+                    <i class="fas fa-lightbulb hint-icon"></i>
+                    <div id="message" class="message"></div>
+                </div>
+                <div class="progress-wrapper">
+                    <div class="progress-bar">
+                        <div class="progress" id="progress-fill"></div>
+                    </div>
+                    <div class="progress-label">Progress</div>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <h3><i class="fas fa-history"></i> Previous Guesses</h3>
+                <div class="history-container" id="history-list"></div>
+            </div>
+
+            <div class="achievements">
+                <div class="achievement-item">
+                    <i class="fas fa-trophy"></i>
+                    <span>Best Score: </span>
+                    <span id="best-score">0</span>
+                </div>
+                <div class="achievement-item">
+                    <i class="fas fa-medal"></i>
+                    <span>Games Won: </span>
+                    <span id="games-won">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="win-overlay" id="win-overlay">
+        <div class="win-card">
+            <div class="trophy-animation">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h2>🎉 Congratulations! 🎉</h2>
+            <p>You found the number: <span id="winning-number"></span></p>
+            <p>in <span id="final-attempts"></span> attempts!</p>
+            <p>Score: <span id="final-score"></span></p>
+            <button id="play-again" class="play-again-btn">
+                <i class="fas fa-redo"></i>
+                Play Again
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
